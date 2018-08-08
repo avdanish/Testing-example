@@ -70,9 +70,11 @@ public class First {
       
         WebElement searchButton = driver.findElement(By.xpath("//button[text()='Поиск']"));
         searchButton.click(); 
-   
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         WebElement bookedRoom = driver.findElement(By.xpath("//button[text()='Заронировать']"));
         bookedRoom.click(); 
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        FileUtils.copyFile(scrFile, new File("c:\\resultend.png"));
     }
         
     	@Test
